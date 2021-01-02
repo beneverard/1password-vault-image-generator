@@ -1,6 +1,6 @@
 module.exports = {
-	title: "Monzo Pot Image Generator",
-	description: "Generate images for your Monzo pots",
+	title: "1Password Value Image Generator",
+	description: "Generate images for your 1Password Vaults",
 	primary: "#FE4D59",
 	dark: "#333333",
 	light: "#f7f7f7",

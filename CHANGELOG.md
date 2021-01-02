@@ -1,3 +1,7 @@
+## 2.5
+
+- Forked to create 1Password value images
+
 ## 2.4
 
 - Switch between icon styles

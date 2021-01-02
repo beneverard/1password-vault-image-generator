@@ -97,7 +97,7 @@ changeSizeFromInput = function() {
 }
 
 changeSize = function(result) {
-	if (result > 200) { 
+	if (result > 200) {
 		result = 200
 	} else if (result < 0) {
 		result = 0
@@ -393,7 +393,7 @@ document.getElementById('download').onclick = function() {
       	// doing this twice fixes a bug where an image background wouldn't show on first download
       	domtoimage.toBlob(document.getElementById('generated'))
       	    .then(function (blob) {
-      	        window.saveAs(blob, 'monzo-pot-image-' + window.PotData.icon + '-' + PotData.backgroundColor.replace('#', '') + '.png');
+      	        window.saveAs(blob, '1password-vault-image-' + window.PotData.icon + '-' + PotData.backgroundColor.replace('#', '') + '.png');
       	        updateHistory()
       	    });
       });
