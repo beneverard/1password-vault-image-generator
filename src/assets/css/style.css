@@ -79,8 +79,8 @@ h2 {
 
 #preview {
 	width: 316px;
-	height: 205px;
-	border-radius: 10px;
+	height: 316px;
+	border-radius: 50%;
 	box-shadow: 3px 3px 2px 0px rgba(214,214,214,1);
 	position: relative;
 	overflow: hidden;
@@ -100,8 +100,8 @@ h2 {
 }
 
 #generated {
-	width: 1266px;
-	height: 822px;
+	width: 1024px;
+	height: 1024px;
 }
 
 #generated .image__iconwrapper {
@@ -233,16 +233,16 @@ h2 {
     position: relative;
     float: left;
 	overflow: hidden;
-	width: 85px;
+	width: 55px;
 	height: 55px;
-	border-radius: 5px;
+	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
 	margin-right: 5px;
 	margin-bottom: 5px;
-	flex-basis: 85px;
+	flex-basis: 55px;
 }
 
 .example-card img,

@@ -1,11 +1,11 @@
-## Monzo Pot Image Generator
+## 1Password Value Image Generator
 
-Generate images for [Monzo pots](https://monzo.com/help/budgeting-overdrafts-savings/what-is-a-pot).
+Generate images for [1Password Vaults](https://1password.com/).
 
-https://potimages.rknight.me/
+Forked and modified from [Robb Knight's Monzo Pot Image Generator](https://github.com/rknightuk/monzo-pot-image-generator)
 
 ## Development
 
-- `npm install`
-- `npm start`
+- `yarn install`
+- `yarn start`
 - Open `localhost:8080` and have at it

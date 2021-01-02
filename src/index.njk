@@ -39,13 +39,13 @@
 	<script src="/assets/js/dom-to-image.min.js"></script>
 	<script src="/assets/js/FileSaver.min.js"></script>
 
-</head>	
+</head>
 
 <body onload="loadHistory()">
 
 	<header class="header">
         <h1 class="header__main">
-            <span class="header__icon"><i class="fas fa-money-check"></i></span> {{ config.title }}
+            <span class="header__icon"><i class="fa fa-lock-alt"></i></span> {{ config.title }}
         </h1>
     </header>
 
@@ -60,8 +60,8 @@
 	    	</div>
 	    	<div class="preview__controls-icon-changer">
 	    		{% for prefix in ['fas', 'far', 'fal', 'fad'] %}
-	    			<button 
-	    				class="preview__controls-icon-changer-button" 
+	    			<button
+	    				class="preview__controls-icon-changer-button"
 	    				onclick="setIconPrefix('{{ prefix }}')"
     				>
 	    				<i class="{{ prefix }} fa-rocket"></i>
@@ -93,13 +93,13 @@
     		  <summary>Popular Images</summary>
     		  <div class="examples">
     		  	{% for example in examples %}
-					<div 
+					<div
 						class="example-card"
-						data-background="{{ example.backgroundColor }}" 
-						data-color="{{ example.color }}" 
-						data-icon="{{ example.icon }}" 
-						data-prefix="{{ example.prefix }}" 
-						data-size="{{ example.size }}" 
+						data-background="{{ example.backgroundColor }}"
+						data-color="{{ example.color }}"
+						data-icon="{{ example.icon }}"
+						data-prefix="{{ example.prefix }}"
+						data-size="{{ example.size }}"
 						data-image="{{ example.image }}"
 						style="background: {{ example.backgroundColor }}"
 						onclick="loadExampleCard(event)"
@@ -134,17 +134,17 @@
 			<div class="picker">
 				<h2>Colour</h2>
 				{% for color in colors.background %}
-					<div class="color" onclick="setBackgroundColor('{{ color }}')" style="background: {{ color }};"></div>	
+					<div class="color" onclick="setBackgroundColor('{{ color }}')" style="background: {{ color }};"></div>
 				{% endfor %}
 				<div class="hex-input-wrap">
 					<div class="hex-input-icon">
 						<input type="color" class="hex-selector" id="background-color-picker" value="{{ config.primary }}">
 					</div>
-					<input 
-						maxlength="6" 
-						type="text" 
-						class="hex-input" 
-						id="background-hex-input" 
+					<input
+						maxlength="6"
+						type="text"
+						class="hex-input"
+						id="background-hex-input"
 						value="{{ config.primary.replace('#', '') }}"
 					>
 				</div>
@@ -154,18 +154,18 @@
 			<div class="picker">
 				<h2>Gradient</h2>
 				{% for gradient in colors.gradients %}
-					<div class="color" onclick="setGradientColor('{{ gradient.left }}', '{{ gradient.right }}')" style="background-image: linear-gradient(to top right, {{ gradient.left }}, {{ gradient.right }});"></div>	
+					<div class="color" onclick="setGradientColor('{{ gradient.left }}', '{{ gradient.right }}')" style="background-image: linear-gradient(to top right, {{ gradient.left }}, {{ gradient.right }});"></div>
 				{% endfor %}
 				<div class="hex-inputs" id="gradient-hex-inputs">
 					<div class="hex-input-wrap">
 						<div class="hex-input-icon">
 							<input class="hex-selector" type="color" id="gradient-left-color-picker" value="">
 						</div>
-						<input 
-							maxlength="6" 
-							type="text" 
-							class="hex-input" 
-							id="gradient-left-hex-input" 
+						<input
+							maxlength="6"
+							type="text"
+							class="hex-input"
+							id="gradient-left-hex-input"
 							value=""
 						>
 					</div>
@@ -173,11 +173,11 @@
 						<div class="hex-input-icon">
 							<input class="hex-selector" type="color" id="gradient-right-color-picker" value="">
 						</div>
-						<input 
-							maxlength="6" 
-							type="text" 
-							class="hex-input" 
-							id="gradient-right-hex-input" 
+						<input
+							maxlength="6"
+							type="text"
+							class="hex-input"
+							id="gradient-right-hex-input"
 							value=""
 						>
 					</div>
@@ -189,56 +189,56 @@
 			<div class="picker">
 				<h2>Icon Colour</h2>
 				{% for color in colors.icon %}
-					<div class="color" onclick="setIconColor('{{ color }}')" style="background: {{ color }};"></div>	
+					<div class="color" onclick="setIconColor('{{ color }}')" style="background: {{ color }};"></div>
 				{% endfor %}
 				<div class="hex-input-wrap">
 					<div class="hex-input-icon">
 						<input class="hex-selector" type="color" id="icon-color-picker" value="{{ config.light }}">
 					</div>
-					<input 
-						maxlength="6" 
-						type="text" 
-						class="hex-input" 
-						id="icon-hex-input" 
+					<input
+						maxlength="6"
+						type="text"
+						class="hex-input"
+						id="icon-hex-input"
 						value="{{ config.light.replace('#', '') }}"
 					>
 				</div>
 				<div style="clear:both;"><input type="checkbox" id="calc-contrast" checked="checked"><label class="calc-contrast-label" for="calc-contrast">auto change colour</label></div>
 			</div>
 		</div>
-		<div class="picker-wrapper">
+		<div class="picker-wrapper" style="display: none;">
 			<div class="picker">
 				<h2>Background Image</h2>
 				{% for image in images %}
-					<img 
-						src="/assets/img/backgrounds/{{ image.path }}" 
-						class="background" 
+					<img
+						src="/assets/img/backgrounds/{{ image.path }}"
+						class="background"
 						onclick="setBackgroundImage('/assets/img/backgrounds/{{ image.path }}', {% if image.type === 'light' %}true{% else %}false{% endif %})"
 					>
 				{% endfor %}
 				<div style="clear: both;"></div>
 				<details>
 					<summary>Text</summary>
-					<input 
+					<input
 						type="text"
-						id="text-input" 
-						class="text-input" 
+						id="text-input"
+						class="text-input"
 						value=""
-						onkeyup="setText()" 
+						onkeyup="setText()"
 					>
 					<div style="margin-top: 0">
 						{% for color in colors.icon %}
-							<div class="color" onclick="setTextColor('{{ color }}')" style="background: {{ color }};"></div>	
+							<div class="color" onclick="setTextColor('{{ color }}')" style="background: {{ color }};"></div>
 						{% endfor %}
 						<div class="hex-input-wrap">
 							<div class="hex-input-icon">
 								<input type="color" class="hex-selector" id="text-color-picker" value="{{ config.light }}">
 							</div>
-							<input 
-								maxlength="6" 
-								type="text" 
-								class="hex-input" 
-								id="text-hex-input" 
+							<input
+								maxlength="6"
+								type="text"
+								class="hex-input"
+								id="text-hex-input"
 								value="{{ config.light.replace('#', '') }}"
 							>
 						</div>
@@ -259,14 +259,14 @@
 		<input type="text" onkeyup="search()" id="icon-search" class="icon-search" placeholder="Search for an icon">
 		<div class="icons">
 			{% for icon in pro %}
-				<div 
+				<div
 					title="{{ icon.label }}"
 					data-key="{{ icon.key }}"
 					data-prefix="{{ icon.prefix }}"
 					data-keywords="{{ icon.keywords }}"
-					class="icons__single" 
+					class="icons__single"
 					onclick="setIcon(
-						'{{ icon.key }}', 
+						'{{ icon.key }}',
 						'{{ icon.prefix }}'
 					)"
 					style="{% if icon.prefix !== 'fas' %}display: none;{% endif %}
@@ -279,9 +279,9 @@
 	</div>
 
 	<footer class="footer">
-		<p><em>Generate images for your Monzo pots or your Starling goals</em></p>
-		<p>{{ config.title }} by <a href="https://rknight.me">Robb Knight</a> | Icons from <a href="https://fontawesome.com/">Font Awesome</a></p>
-		<p><a href="https://app.usefathom.com/share/hhytrxsk/potimages.rknight.me">Stats</a> | <a href="https://github.com/rknightuk/monzo-pot-image-generator">Source</a> | <a href="https://monzo.me/robbknight">Buy me a coffee</a> | <a href="https://community.monzo.com/t/monzo-pot-image-generator/102120">Discuss</a></p>
+		<p><em>Generate images for your 1Password Vaults</em></p>
+		<p>Originally by <a href="https://rknight.me">Robb Knight</a>, adapted by <a href="https://beneverard.co.uk">Ben Everard</a> | Icons from <a href="https://fontawesome.com/">Font Awesome</a></p>
+		<p><a href="https://github.com/beneverard/1password-vault-image-generator">Source</a> | <a href="https://monzo.me/robbknight">Buy Rob a coffee</a></p>
 	</footer>
 
 	<script>
